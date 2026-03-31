@@ -1,0 +1,59 @@
+"""
+Student Record System using Tuples
+"""
+
+# Each student: (ID, Name, Marks)
+students = (
+    (1, "Sakshi", 85),
+    (2, "Riya", 90),
+    (3, "Aman", 78),
+    (4, "Rahul", 88)
+)
+
+
+# 1. Display All Students
+print("All Students:")
+for student in students:
+    print(student)
+
+
+# 2. Find Student by ID
+search_id = 2
+
+for student in students:
+    if student[0] == search_id:
+        print("\nStudent Found:", student)
+
+
+# 3. Calculate Average Marks
+total = 0
+
+for student in students:
+    total += student[2]
+
+average = total / len(students)
+print("\nAverage Marks:", average)
+
+
+# 4. Find Topper
+topper = students[0]
+
+for student in students:
+    if student[2] > topper[2]:
+        topper = student
+
+print("\nTopper:", topper)
+
+
+# 5. Filter Students Above 80 Marks
+print("\nStudents with marks above 80:")
+
+for student in students:
+    if student[2] > 80:
+        print(student)
+
+
+# 6. Convert to Dictionary 
+student_dict = {s[0]: (s[1], s[2]) for s in students}
+
+print("\nDictionary Format:", student_dict)

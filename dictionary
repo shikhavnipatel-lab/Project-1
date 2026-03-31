@@ -1,0 +1,19 @@
+queue = {}
+front = 0
+rear = 0
+queue[rear] = 10
+rear += 1
+queue[rear] = 20
+rear += 1
+queue[rear] = 30
+rear += 1
+print("Queue:", queue)
+if front < rear:
+    print("Removed:", queue[front])
+    del queue[front]
+    front += 1
+print("Queue after dequeue:", queue)
+if front < rear:
+    print("Front element:", queue[front])
+else:
+    print("Queue is empty")
